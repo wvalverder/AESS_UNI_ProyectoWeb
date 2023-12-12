@@ -7,7 +7,8 @@
 body {
     width: 100%;
     min-height: 100vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -52,11 +53,9 @@ footer {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2rem;
-    position: absolute;
-    bottom: 0;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: auto;
 }
 
 @media screen and (max-width: 670px) {
