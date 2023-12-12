@@ -11,7 +11,7 @@ header {
     padding: 2rem;
     font-family: sans-serif;
     background-color: #1c1c1c;
-    height: 100px;
+    height: 6.25rem;
 }
 
 .logo {
@@ -35,7 +35,16 @@ header {
 }
 
 .main {
-    width: 100vw;
+    width: 100%;
+}
+
+/*datos del main*/
+
+footer {
+    background-color: #ececec;
+    font-family: sans-serif;
+    width: 100%;
+    height: 6.25rem;
 }
 
 @media screen and (max-width: 670px) {
