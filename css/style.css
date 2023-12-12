@@ -16,6 +16,7 @@ header {
 
 .logo {
     max-width: 5rem;
+    margin: 0 0.5rem;
 }
 
 .nav__list {
@@ -37,7 +38,7 @@ header {
     width: 100vw;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 670px) {
     .abrir-menu,.cerrar-menu {
         display: block;
         background-color: transparent;
