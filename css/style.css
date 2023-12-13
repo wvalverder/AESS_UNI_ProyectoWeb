@@ -60,7 +60,19 @@ footer {
 }
 
 .footer__input {
-    width: 500px;
+    width: 15rem;
+    padding: 0.3rem;
+}
+
+.footer__subtitle {
+    font-size: 0.8rem;
+}
+
+.footer__button {
+    width: 5rem;
+    padding: 0.3rem;
+    color:#ececec;
+    background-color: #1c1c1c;
 }
 
 @media screen and (max-width: 670px) {
