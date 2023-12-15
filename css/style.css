@@ -5,7 +5,7 @@
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -121,7 +121,7 @@ header {
 /*Carousel de noticias*/
 
 .Carousel{
-    width: 100%;
+    width: 100vw;
     margin: 0px auto;
 }
 .Carousel h2{
@@ -132,6 +132,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 10px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .slick-list{
