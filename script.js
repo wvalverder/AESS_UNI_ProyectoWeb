@@ -43,8 +43,8 @@ prev.onclick = function() {
 let refreshSlider = setInterval(()=>{next.click()},5000);
 
 function reloadSlider() {
-    let checkleft = items[active].offsetLeft;
-    list.style.left = -checkleft + 'px';
+    let checkleft = items[active].offsetLeft/ list.offsetWidth * 100;
+    list.style.left = -checkleft + '%';
 
     let lastActiveDot = document.querySelector('.slider .dots li.active');
     lastActiveDot.classList.remove('active');

@@ -20,7 +20,6 @@ header {
     font-family: sans-serif;
     background-color: #1c1c1c;
     height: 6.25rem;
-    width: 100vw;
 }
 
 .logo {
@@ -44,7 +43,7 @@ header {
 }
 
 .main {
-    width: 100%;
+    width: 100vw;
     height: auto;
 }
 
@@ -62,8 +61,13 @@ header {
     left: 0;
     height: 100%;
     display: flex;
-    width: max-content;
+    width: 100%;
     transition: 1s;
+}
+
+.list .item {
+    flex: 0 0 100%; /* Asegúrate de que cada elemento ocupe el 100% del ancho */
+    box-sizing: border-box
 }
 
 .list img {
