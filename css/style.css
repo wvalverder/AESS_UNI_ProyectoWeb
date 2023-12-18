@@ -9,6 +9,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x:hidden;
 }
 
 header {
@@ -212,7 +213,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 1rem;
+    padding: 1.8rem;
     margin-top: auto;
 }
 
