@@ -12,6 +12,8 @@ body {
     overflow-x:hidden;
 }
 
+/*estilos de la parte del header*/
+
 header {
     display: flex;
     justify-content: space-between;
@@ -47,6 +49,8 @@ header {
     height: auto;
 }
 
+/*Estilos de la parte del slider*/
+
 .slider {
     width: 100vw;
     height: 700px;
@@ -66,7 +70,7 @@ header {
 }
 
 .list .item {
-    flex: 0 0 100%; /* Asegúrate de que cada elemento ocupe el 100% del ancho */
+    flex: 0 0 100%; 
     box-sizing: border-box
 }
 
@@ -122,9 +126,7 @@ header {
     width: 30px;
 }
 
-/*fin de Slider*/
-
-/*Carousel de noticias*/
+/*Estilos del Carousel de noticias*/
 
 .Carousel{
     width: 100vw;
@@ -207,7 +209,7 @@ header {
     right: 0px;
 }
 
-/*fin de carousel*/
+/*Estilos del Footer*/
 
 footer {
     width: 100vw;
@@ -236,6 +238,8 @@ footer {
     color:#ececec;
     background-color: #1c1c1c;
 }
+
+/*media queries para el tema responsive*/
 
 @media screen and (max-width: 670px) {
     .abrir-menu,.cerrar-menu {
