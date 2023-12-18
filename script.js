@@ -1,3 +1,5 @@
+/* Parte de JavaScript con respecto al header*/
+
 const nav = document.querySelector('#nav');
 const abrir = document.querySelector('#abrir');
 const cerrar = document.querySelector('#cerrar');
@@ -10,7 +12,7 @@ cerrar.addEventListener('click', () => {
     nav.classList.remove('visible');
 });
 
-/*.slider*/
+/*. Parte de JavaScript con respecto al Slider*/
 
 let list = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
@@ -60,7 +62,7 @@ dots.forEach((Li,key)=> {
     } )
 })
 
-/*carousel*/
+/*Parte de javaScript con respecto al Carousel de Noticias*/
 
 const buttonPrev = document.getElementById('button-prev');
 const buttonNext = document.getElementById('button-next');
@@ -86,4 +88,3 @@ function Move(value) {
     }
 }
 
-/*fin de Carousel*/
