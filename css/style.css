@@ -302,12 +302,6 @@ header {
     border: 1px solid black;
     box-shadow: 3px -1px 2px 0px rgba(0,0,0,0.5);
   }
-  /*.carousel .card .video {
-    background: #8B53FF;
-    height: 148px;
-    width: 148px;
-    border-radius: 50%;
-  }*/
   .card .video iframe {
     width: 250px;
     height: 140px;
