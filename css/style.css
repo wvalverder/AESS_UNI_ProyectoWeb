@@ -240,6 +240,14 @@ header {
     margin-top: 20px;
 }
 
+.enunciado{
+    color: steelblue;
+}
+
+.container h1{
+    text-align: center;
+}
+
 
 /*Explorar Videos*/
 
