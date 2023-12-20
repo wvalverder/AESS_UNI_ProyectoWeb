@@ -216,6 +216,7 @@ header {
     margin: 0 auto;
     border: 1px solid black;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    margin-top: 20px;
 }
 
 .button_noticias{
@@ -224,6 +225,7 @@ header {
     color:#fff;
     font-size: 15px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .contenedor,.container{
@@ -242,6 +244,8 @@ header {
 
 .enunciado{
     color: steelblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .container h1{
