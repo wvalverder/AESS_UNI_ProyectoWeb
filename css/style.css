@@ -463,6 +463,8 @@ footer {
     }
   }
 
+  /*media queiries del proyecto y la description*/
+
   @media(min-width:790px){
     .contenedor{
      display: grid;
