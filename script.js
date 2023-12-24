@@ -1,68 +1,108 @@
-/* Parte de JavaScript con respecto al header*/
+/*********PARTE JAVASCRIPT DEL HEADER******************/
 
+// Selecciona el elemento del DOM con el id 'nav' y lo almacena en la variable 'nav'
 const nav = document.querySelector('#nav');
+
+// Selecciona el elemento del DOM con el id 'abrir' y lo almacena en la variable 'abrir'
 const abrir = document.querySelector('#abrir');
+
+// Selecciona el elemento del DOM con el id 'cerrar' y lo almacena en la variable 'cerrar'
 const cerrar = document.querySelector('#cerrar');
 
+// Agrega un evento de escucha al elemento con id 'abrir', que se activa cuando se hace clic
 abrir.addEventListener('click', () => {
+    // Agrega la clase 'visible' al elemento con id 'nav' cuando se hace clic en 'abrir'
 	nav.classList.add('visible');
 });
 
+// Agrega un evento de escucha al elemento con id 'cerrar', que se activa cuando se hace clic
 cerrar.addEventListener('click', () => {
+    // Elimina la clase 'visible' del elemento con id 'nav' cuando se hace clic en 'cerrar'
     nav.classList.remove('visible');
 });
 
-/*. Parte de JavaScript con respecto al Slider*/
+/****************PARTE JAVASCRIPT DEL SLIDER********************/
 
+// Selecciona el elemento con la clase 'slider' y encuentra su elemento secundario con la clase 'list'
 let list = document.querySelector('.slider .list');
+
+// Selecciona todos los elementos con la clase 'item' que son descendientes del elemento 'list'
 let items = document.querySelectorAll('.slider .list .item');
+
+// Selecciona todos los elementos de lista dentro del elemento 'dots' dentro de la clase 'slider'
 let dots = document.querySelectorAll('.slider .dots li');
+
+// Selecciona el elemento HTML con el id 'prev'
 let prev = document.getElementById('prev');
+
+// Selecciona el elemento HTML con el id 'next'
 let next = document.getElementById('next');
 
+// Inicializa el índice activo en 0 y calcula el índice máximo en el array de items
 let active = 0;
-let legthItems = items.length - 1;
+let lengthItems = items.length - 1;
 
+// Agrega un escuchador de eventos de clic al botón 'next'
 next.onclick = function() {
-    if(active + 1 > legthItems) {
-        active = 0;
+    // Verifica si incrementar el índice activo superaría el último ítem
+    if (active + 1 > lengthItems) {
+        active = 0; // Si es así, restablece el índice activo a 0
     } else {
-        active++;
+        active++; // De lo contrario, incrementa el índice activo
     }
 
+    // Llama a la función para recargar el slider
     reloadSlider();
 }
 
+// Agrega un escuchador de eventos de clic al botón 'prev'
 prev.onclick = function() {
-    if(active - 1 < 0) {
-        active = legthItems;
-    }else {
-        active--;
+    // Verifica si decrementar el índice activo iría más allá del primer ítem
+    if (active - 1 < 0) {
+        active = lengthItems; // Si es así, establece el índice activo en el último ítem
+    } else {
+        active--; // De lo contrario, decrementa el índice activo
     }
+
+    // Llama a la función para recargar el slider
     reloadSlider();
 }
 
-let refreshSlider = setInterval(()=>{next.click()},5000);
+// Configura un intervalo para hacer clic automáticamente en el botón 'next' cada 5000 milisegundos (5 segundos)
+let refreshSlider = setInterval(() => { next.click() }, 5000);
 
+// Define una función para recargar el slider
 function reloadSlider() {
-    let checkleft = items[active].offsetLeft/ list.offsetWidth * 100;
-    list.style.left = -checkleft + '%';
+    // Calcula la posición izquierda del ítem activo en porcentaje relativo al ancho de 'list'
+    let checkLeft = items[active].offsetLeft / list.offsetWidth * 100;
 
+    // Establece la propiedad de estilo 'left' de 'list' para mover el slider al ítem activo
+    list.style.left = -checkLeft + '%';
+
+    // Encuentra el último punto activo y elimina la clase 'active'
     let lastActiveDot = document.querySelector('.slider .dots li.active');
     lastActiveDot.classList.remove('active');
+
+    // Agrega la clase 'active' al punto correspondiente al nuevo ítem activo
     dots[active].classList.add('active');
+
+    // Borra el intervalo y configúralo de nuevo para reiniciar el movimiento automático del slider
     clearInterval(refreshSlider);
-    refreshSlider = setInterval(()=>{next.click()},5000);
+    refreshSlider = setInterval(() => { next.click() }, 5000);
 }
 
-dots.forEach((Li,key)=> {
-    Li.addEventListener('click', function() {
+// Agrega un escuchador de eventos de clic a cada punto para navegar manualmente al ítem correspondiente
+dots.forEach((li, key) => {
+    li.addEventListener('click', function() {
+        // Establece el índice activo en el índice del punto clickeado
         active = key;
-        reloadSlider();
-    } )
-})
 
-/*Parte de javaScript con respecto al Carousel de Noticias*/
+        // Llama a la función para recargar el slider
+        reloadSlider();
+    });
+});
+
+/*****************PARTE JAVA SCRIPT DE LAS NOTICIAS********************************/
 
 const buttonPrev = document.getElementById('button-prev');
 const buttonNext = document.getElementById('button-next');
