@@ -12,7 +12,7 @@ body {
     overflow-x:hidden;
 }
 
-/*estilos de la parte del header*/
+/**********************estilos de la parte del header***********************/
 
 header {
     display: flex;
@@ -49,7 +49,7 @@ header {
     height: auto;
 }
 
-/*Estilos de la parte del slider*/
+/*********************Estilos de la parte del slider***************************/
 
 .slider {
     width: 100vw;
@@ -126,21 +126,21 @@ header {
     width: 30px;
 }
 
-/*Estilos del Carousel de noticias*/
+/********************Estilos del Carousel de noticias******************************/
 
 .Carousel{
     width: 100vw;
     margin: 0px auto;
 }
 .Carousel h2{
-    font-size: 26px;
+    font-size: 40px;
     line-height: 38px;
     padding-bottom: 24px;
     opacity: .9;
     text-transform: uppercase;
     letter-spacing: 10px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .slick-list{
@@ -240,7 +240,7 @@ header {
     right: 0px;
 }
 
-/* Estilos de la Description*/
+/************************* Estilos de la Description*******************************/
 
 .container_description {
     width: 70%;
@@ -308,7 +308,7 @@ header {
 }
 
 
-/*Explorar Videos*/
+/***********************Explorar Videos***************************/
 
 .multimedia {
    display: flex;
@@ -319,14 +319,14 @@ header {
 }
 
 .multimedia__title {
-    font-size: 26px;
+    font-size: 40px;
     line-height: 38px;
     padding-bottom: 24px;
     opacity: .9;
     text-transform: uppercase;
     letter-spacing: 10px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .wrapper {
@@ -420,17 +420,17 @@ header {
     font-size: 1.31rem;
   }
 
-/*Estilos del Proyectos*/
+/***************Estilos del Proyectos****************/
 
 .proyecto__title {
     text-align: center;
-    font-size: 26px;
+    font-size: 40px;
     line-height: 38px;
     padding-bottom: 24px;
     opacity: .9;
     text-transform: uppercase;
     letter-spacing: 10px;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .container_proyecto {
@@ -520,7 +520,7 @@ header {
     margin-right: 0;
 }
 
-/*Estilos del Footer*/
+/***********************Estilos del Footer********************************/
 
 footer {
     width: 100%;
@@ -666,7 +666,7 @@ margin: 20px auto;
 }
 
 
-/*media queries para el tema responsive*/
+/*********************media queries para el tema responsive**********************************/
 
 @media screen and (max-width: 670px) {
     .abrir-menu,.cerrar-menu {
