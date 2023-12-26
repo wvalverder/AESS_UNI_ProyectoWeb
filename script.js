@@ -1,42 +1,28 @@
 /*********PARTE JAVASCRIPT DEL HEADER******************/
 
-// Selecciona el elemento del DOM con el id 'nav' y lo almacena en la variable 'nav'
-const nav = document.querySelector('#nav');
 
-// Selecciona el elemento del DOM con el id 'abrir' y lo almacena en la variable 'abrir'
-const abrir = document.querySelector('#abrir');
-
-// Selecciona el elemento del DOM con el id 'cerrar' y lo almacena en la variable 'cerrar'
-const cerrar = document.querySelector('#cerrar');
+const nav = document.querySelector('#nav');            // Selecciona el elemento del DOM con el id 'nav' y lo almacena en la variable 'nav'
+const abrir = document.querySelector('#abrir');       // Selecciona el elemento del DOM con el id 'abrir' y lo almacena en la variable 'abrir'
+const cerrar = document.querySelector('#cerrar');    // Selecciona el elemento del DOM con el id 'cerrar' y lo almacena en la variable 'cerrar'
 
 // Agrega un evento de escucha al elemento con id 'abrir', que se activa cuando se hace clic
 abrir.addEventListener('click', () => {
-    // Agrega la clase 'visible' al elemento con id 'nav' cuando se hace clic en 'abrir'
-	nav.classList.add('visible');
+	nav.classList.add('visible');                   // Agrega la clase 'visible' al elemento con id 'nav' cuando se hace clic en 'abrir'
 });
 
 // Agrega un evento de escucha al elemento con id 'cerrar', que se activa cuando se hace clic
 cerrar.addEventListener('click', () => {
-    // Elimina la clase 'visible' del elemento con id 'nav' cuando se hace clic en 'cerrar'
-    nav.classList.remove('visible');
+    nav.classList.remove('visible');               // Elimina la clase 'visible' del elemento con id 'nav' cuando se hace clic en 'cerrar'
 });
 
 /****************PARTE JAVASCRIPT DEL SLIDER********************/
 
-// Selecciona el elemento con la clase 'slider' y encuentra su elemento secundario con la clase 'list'
-let list = document.querySelector('.slider .list');
 
-// Selecciona todos los elementos con la clase 'item' que son descendientes del elemento 'list'
-let items = document.querySelectorAll('.slider .list .item');
-
-// Selecciona todos los elementos de lista dentro del elemento 'dots' dentro de la clase 'slider'
-let dots = document.querySelectorAll('.slider .dots li');
-
-// Selecciona el elemento HTML con el id 'prev'
-let prev = document.getElementById('prev');
-
-// Selecciona el elemento HTML con el id 'next'
-let next = document.getElementById('next');
+let list = document.querySelector('.slider .list');                 // Selecciona el elemento con la clase 'slider' y encuentra su elemento secundario con la clase 'list'
+let items = document.querySelectorAll('.slider .list .item');      // Selecciona todos los elementos con la clase 'item' que son descendientes del elemento 'list'
+let dots = document.querySelectorAll('.slider .dots li');          // Selecciona todos los elementos de lista dentro del elemento 'dots' dentro de la clase 'slider'
+let prev = document.getElementById('prev');                        // Selecciona el elemento HTML con el id 'prev'
+let next = document.getElementById('next');                         // Selecciona el elemento HTML con el id 'next'
 
 // Inicializa el índice activo en 0 y calcula el índice máximo en el array de items
 let active = 0;
@@ -128,7 +114,7 @@ function Move(value) {
     }
 }
 
-/*parte de JavaScript con respecto al Carousel de Video*/
+/*************************************PARTE DE JAVASCRIPT CON RESPECTO AL VIDEO************************/
 
 const wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
@@ -137,26 +123,24 @@ const arrowBtns = document.querySelectorAll(".wrapper i");
 const carouselChildrens = [...carousel.children];
 
 let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth); // Obtener el número de tarjetas que caben en el carrusel a la vez
 
-// Get the number of cards that can fit in the carousel at once
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+// Inserta copias de las últimas cartas al principio del carrusel para un desplazamiento infinito
 carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
 
-// Insert copies of the first few cards to end of carousel for infinite scrolling
+// Inserta copias de las primeras cartas al final del carrusel para un desplazamiento infinito
 carouselChildrens.slice(0, cardPerView).forEach(card => {
     carousel.insertAdjacentHTML("beforeend", card.outerHTML);
 });
 
-// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+// Desplace el carrusel en la posición adecuada para ocultar las primeras tarjetas duplicadas en Firefox
 carousel.classList.add("no-transition");
 carousel.scrollLeft = carousel.offsetWidth;
 carousel.classList.remove("no-transition");
 
-// Add event listeners for the arrow buttons to scroll the carousel left and right
+// Añadir escuchadores de eventos para los botones de flecha para desplazar el carrusel a izquierda y derecha
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
@@ -166,14 +150,14 @@ arrowBtns.forEach(btn => {
 const dragStart = (e) => {
     isDragging = true;
     carousel.classList.add("dragging");
-    // Records the initial cursor and scroll position of the carousel
+    // Registra el cursor inicial y la posición de desplazamiento del carrusel
     startX = e.pageX;
     startScrollLeft = carousel.scrollLeft;
 }
 
 const dragging = (e) => {
-    if(!isDragging) return; // if isDragging is false return from here
-    // Updates the scroll position of the carousel based on the cursor movement
+    if(!isDragging) return; // si isDragging es falso volver desde aquí
+   // Actualiza la posición de desplazamiento del carrusel en función del movimiento del cursor
     carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 }
 
@@ -183,27 +167,27 @@ const dragStop = () => {
 }
 
 const infiniteScroll = () => {
-    // If the carousel is at the beginning, scroll to the end
+   // Si el carrusel está al principio, desplácese hasta el final
     if(carousel.scrollLeft === 0) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
         carousel.classList.remove("no-transition");
     }
-    // If the carousel is at the end, scroll to the beginning
+   // Si el carrusel está al final, desplácese hasta el principio
     else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.offsetWidth;
         carousel.classList.remove("no-transition");
     }
 
-    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+   // Borra el tiempo de espera existente e inicia la reproducción automática si el ratón no está sobre el carruse
     clearTimeout(timeoutId);
     if(!wrapper.matches(":hover")) autoPlay();
 }
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-    // Autoplay the carousel after every 2500 ms
+    if(window.innerWidth < 800 || !isAutoPlay) return; // Devuelve si la ventana es menor que 800 o isAutoPlay es falso
+    // Reproducción automática del carrusel cada 2500 ms
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
 }
 autoPlay();
