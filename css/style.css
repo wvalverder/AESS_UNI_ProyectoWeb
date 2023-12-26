@@ -435,8 +435,9 @@ header {
 
 .container_proyecto {
     width: 100vw;
-    height:  100vh;
+    height: auto;
     font-family: sans-serif;
+    margin-bottom: 50px;
 }
 
 .slider_proyecto {
