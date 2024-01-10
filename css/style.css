@@ -753,6 +753,8 @@ margin: 20px auto;
     }
 }
 
+/***media quierie del footer*/
+
 @media (max-width: 700px) {
     footer {
         bottom: unset;
