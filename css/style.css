@@ -734,12 +734,16 @@ margin: 20px auto;
     }
   }
 
+/**media Querie description*/
+
 @media (max-width: 890px) {
     .container_description {
         flex-flow: wrap;
         height: auto;
     }
 }
+
+/*********/
 
 @media (max-width: 1200px) {
     .slider_proyecto .item_proyecto {
